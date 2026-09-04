@@ -12,6 +12,8 @@ The estimates vary with the student's familiarity with Python and the model prov
 
 ## Preparation
 
+A [video walkthrough](https://youtu.be/qO98jDayTHo?si=gLN5FZ3FDiAIs_gG) of how to approach this assignment is available. Watch it before you begin for an overview of the expected workflow.
+
 Run the assignment from the `cartwheel` directory. Install the Python environment and generate the local Cartwheel data:
 
 ```bash
