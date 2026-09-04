@@ -1,8 +1,6 @@
 # Cartwheel course repository
 
-Homework assignments and codebase for **Evaluating and Improving AI Agents**. Assignments are released incrementally as the course progresses. Currently available: Module 1 (hw1, hw2). More will appear here over time.
-
-The repository contains the Cartwheel support agent and the student work for all five modules. Cartwheel is a fictional commerce platform that hosts independent stores. Students begin by completing the agent, then use the same repository for trace analysis, automated evaluation, continuous integration, adversarial evaluation, and improvement experiments.
+The repository contains the Cartwheel support agent and the student work for all five modules of "Evaluating and Improving AI Agents." Cartwheel is a fictional commerce platform that hosts independent stores. Students begin by completing the agent, then use the same repository for trace analysis, automated evaluation, continuous integration, adversarial evaluation, and improvement experiments.
 
 Begin with the [homework index](homework/README.md). Each assignment names the code and records required for the corresponding module.
 
@@ -58,7 +56,7 @@ seed/
   validate.py             checks every number in every doc against facts.yaml
 agent/                    support agent scaffold
   agent.py                system prompt, model wiring, the three lecture tools
-  tools.py                HOMEWORK 1: four tool holes
+  tools.py                HOMEWORK 1: five tool holes
   auth.py                 auth context + permission checks (complete; do not weaken)
   db.py                   typed SQLite access layer (complete)
   helpcenter.py           policy corpus loading + BM25 (complete)
@@ -92,7 +90,7 @@ tests/                    offline, no API keys; homework tests are xfail until d
 
 | Homework | File | Holes |
 | --- | --- | --- |
-| HW1 | `agent/tools.py` | `get_policy`, `search_products`, `list_my_orders`, `cancel_order` |
+| HW1 | `agent/tools.py` | `get_policy`, `search_products`, `list_my_orders`, `cancel_order`, `find_order` |
 | HW2 | `observability/instrument.py` | `record_tool_result`, `_set_permission_denied_attributes` |
 | HW2 | `server/app.py` | `create_session`, `post_message` |
 

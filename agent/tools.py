@@ -169,3 +169,32 @@ def cancel_order(ctx: AuthContext, order_id: int, reason: str) -> dict[str, Any]
         return {"ok": False, "error": "paused", "reason": paused}
     ### YOUR CODE HERE (HW1)
     raise NotImplementedError("HW1: implement cancel_order")
+
+
+def find_order(ctx: AuthContext, query: str) -> dict[str, Any]:
+    """Search the caller's orders by product name. Risk tier: read.
+
+    Takes a natural-language query (e.g., "earmuffs I bought last week")
+    and searches the authenticated user's orders for products whose name
+    matches. Use fuzzy string matching (e.g., thefuzz.fuzz.partial_ratio
+    or SQLite LIKE) to find orders whose product name is close to the
+    query.
+
+    Access rules: a shopper searches only the shopper's own orders, a
+    merchant searches orders from the merchant's store, and support staff
+    can search any orders. Use agent.db.list_orders_for_user for shoppers
+    and agent.db.list_orders_for_store for merchants. For support staff,
+    use agent.db.list_orders_for_user with no user filter, or search
+    across all orders.
+
+    Args:
+        ctx: The caller's auth context.
+        query: A natural-language description of the product.
+
+    Returns:
+        {"ok": True, "orders": [...]} with a list of matching orders
+        (at most 5), each as the dict returned by agent.db. If no orders
+        match, return {"ok": True, "orders": []}.
+    """
+    ### YOUR CODE HERE (HW1)
+    raise NotImplementedError("HW1: implement find_order")

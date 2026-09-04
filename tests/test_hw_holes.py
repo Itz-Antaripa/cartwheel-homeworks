@@ -138,6 +138,27 @@ def test_hw1_cancel_order(world_copy: Path) -> None:
     assert missing["error"] == "not_found"
 
 
+@hw(1, "find_order")
+def test_hw1_find_order(world: dict) -> None:
+    # Shopper 1 owns order 4127, which contains a product.
+    conn = sqlite3.connect(world["db"])
+    try:
+        product_name = conn.execute(
+            "SELECT p.title FROM orders o JOIN products p ON o.product_id = p.id WHERE o.id = 4127"
+        ).fetchone()[0]
+    finally:
+        conn.close()
+
+    result = tools.find_order(SHOPPER_1, product_name)
+    assert result["ok"] is True
+    assert isinstance(result["orders"], list)
+    assert any(o["id"] == 4127 for o in result["orders"])
+
+    # No match returns an empty list, not an error.
+    empty = tools.find_order(SHOPPER_1, "zzzznonexistent9999")
+    assert empty == {"ok": True, "orders": []}
+
+
 # ---------------------------------------------------------------------------
 # Homework 2: instrumentation and authenticated endpoint
 # ---------------------------------------------------------------------------
