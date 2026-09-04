@@ -101,5 +101,5 @@ enough to implement from, and has a matching test in
 `tests/test_hw_holes.py` that is xfail until you implement it. Run them
 with `uv run pytest tests/test_hw_holes.py`.
 
-The Module 1 handouts are in `homework/module-1/`. The [homework index](homework/README.md) lists all released assignments.
+The Module 1 handouts are in `homework/module-1/`. The [homework index](homework/README.md) lists all released assignments. A video walkthrough of how to attempt Homework 1 is available at https://youtu.be/qO98jDayTHo?si=gLN5FZ3FDiAIs_gG.
 
