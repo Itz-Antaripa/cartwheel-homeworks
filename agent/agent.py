@@ -408,6 +408,14 @@ def cancel_order(
     return _call(wrapper, "cancel_order", hw_tools.cancel_order, order_id, reason)
 
 
+@function_tool
+def find_order(
+    wrapper: RunContextWrapper[AuthContext], query: str
+) -> dict[str, Any]:
+    """Search your orders by product name (fuzzy match)."""
+    return _call(wrapper, "find_order", hw_tools.find_order, query)
+
+
 # Progressive disclosure: a session exposes only the tools its role can use.
 # Fewer tools mean fewer wrong choices and cleaner evals. At dev scale the
 # only difference is that support staff, who have no orders of their own,
@@ -422,9 +430,9 @@ _COMMON_TOOLS = [
     escalate_to_human,
 ]
 TOOLS_BY_ROLE = {
-    "shopper": _COMMON_TOOLS + [list_my_orders],
-    "merchant": _COMMON_TOOLS + [list_my_orders],
-    "support": _COMMON_TOOLS,
+    "shopper": _COMMON_TOOLS + [list_my_orders, find_order],
+    "merchant": _COMMON_TOOLS + [list_my_orders, find_order],
+    "support": _COMMON_TOOLS + [find_order],
 }
 
 

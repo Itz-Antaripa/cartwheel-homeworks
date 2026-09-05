@@ -69,9 +69,10 @@ The threshold is `refund_auto_approve_threshold_usd` in `facts.yaml` ($100).
 | TOOL-3 | `search_products` | store, query, filters | matching products | none | read |
 | TOOL-4 | `get_order` | order identifier | accessible order record, including refund eligibility | none | read |
 | TOOL-5 | `list_my_orders` | none | shopper orders or merchant store orders | none | read |
-| TOOL-6 | `issue_refund` | order identifier, amount, reason | refund status | creates a refund and may mark an order refunded | write |
-| TOOL-7 | `cancel_order` | order identifier, reason | cancellation confirmation | marks an order cancelled | write |
-| TOOL-8 | `escalate_to_human` | summary, context | ticket identifier | creates an escalation | write |
+| TOOL-6 | `find_order` | natural-language query | matching orders by product name (fuzzy) | none | read |
+| TOOL-7 | `issue_refund` | order identifier, amount, reason | refund status | creates a refund and may mark an order refunded | write |
+| TOOL-8 | `cancel_order` | order identifier, reason | cancellation confirmation | marks an order cancelled | write |
+| TOOL-9 | `escalate_to_human` | summary, context | ticket identifier | creates an escalation | write |
 
 ## 5. Escalation policy
 
